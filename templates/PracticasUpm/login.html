@@ -1,0 +1,27 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>PracticasUpm</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/stylesheet.css' %}">
+    <script type="text/javascript" src="{% static 'js/scripts.js' %}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+
+</head>
+<body id="body_login">
+        <div id="login_rectangle">
+            <h1 class="text_color">Welcome</h1>
+            <h3 class="text_color">Email</h3>
+            <input id="user" type="text" class="input_login" placeholder="Email">
+            <h3 class="text_color">Password</h3>
+            <input id="password" type="password" class="input_login" placeholder="Password">
+            <p/>
+            <button class="button_login" onclick="login('{% url 'check_login' %}', '{{ csrf_token }}')">Login</button>
+            <h5 class="text_color">Forgot Password?</h5>
+        </div>
+</body>
+</html>

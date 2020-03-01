@@ -1,0 +1,42 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/stylesheet.css' %}">
+    <script type="text/javascript" src="{% static 'js/scripts.js' %}"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</head>
+<body style="background-color: white">
+    <div id="container" class="col-md-6 col-lg-6 col-sm-6 col-xl-6 col-sm-10 col-10 border border-dark">
+        <div id="barra_titulo" class="col-12">Nueva Práctica</div>
+        {% if asignatura %}
+        <form action="{% url 'save_practica' asignatura=asignatura %}" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <label id="name_new_practica" class="col-4" for="nombre" style="padding-top: 10%">Nombre</label>
+            <input class="col-6" type="text" id="nombre" name="nombre" required>
+            <div class="col-12">
+                <label class="col-4" for="personas_grupo" style="padding-top: 10%">Personas en grupo</label>
+                <input class="col-2" type="number" id="personas_grupo" name="personas_grupo" min="1" max="100" step="1" required>
+            </div>
+            <label class="col-4"for="creacion_grupos" style="padding-top: 5%">Creacion de grupos</label>
+            <input class="col-6 fecha" type="date" name="creacion_grupos" id="creacion_grupos" name="trip-start" required style="background: transparent url({% static 'images/calendar.png' %}) 4px no-repeat; background-position: right 100%;">
+            <label class="col-4" for="cierre_grupos" style="padding-top: 5%">Cierre de grupos</label>
+            <input class="col-6 fecha" type="date" name="cierre_grupos" id="cierre_grupos" name="trip-start" required style="background: transparent url({% static 'images/calendar.png' %}) 4px no-repeat; background-position: right 100%;">
+            <label class="col-4" for="entrega_practica" style="padding-top: 5%">Entrega de la practica</label>
+            <input class="col-6 fecha" type="date" name="entrega_practica" id="entrega_practica" name="trip-start" required style="background: transparent url({% static 'images/calendar.png' %}) 4px no-repeat; background-position: right 100%;">
+            <label class="col-3 enunciado" for="document" style="padding-top: 5%">Enunciado de la practica</label>
+            <input class="col-8" type="file" name="document" id="input-file-now" class="file-upload" required>
+            <div class="button_container col-12">
+                <button type="button submit" class="btn btn-primary" action="{% url 'save_practica' asignatura=asignatura %}" method="post" enctype="multipart/form-data" style="float: left">Create</button>
+                <button type="button" class="btn btn-danger" onclick="asignatura('{% url 'go_asignatura' asignatura=asignatura%}', '{{ csrf_token }}')" style="float: right">Cancel</button>
+
+            </div>
+        </form>
+        {% endif %}
+    </div>
+</body>
+</html>

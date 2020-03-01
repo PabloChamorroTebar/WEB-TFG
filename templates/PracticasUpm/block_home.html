@@ -1,0 +1,20 @@
+{% load static %}
+<section style="overflow: auto">
+    <div class="div_home">
+        <div class="logo_upm col-0 col-sm-10 col-md-8 col-lg-8 col-xl-8">
+            <img src="{% static 'images/escudo.png' %}">
+        </div>
+        {% if noticias %}
+            {% for key, value in noticias.items %}
+                <div class="div_mes col-10 col-sm-10 col-md-8 col-lg-8 col-xl-8">{{ key }}</div>
+                {% for noticia in value %}
+                    <div class="div_row row col-10 col-sm-10 col-md-8 col-lg-8 col-xl-8">
+                        <div class="col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">{{ noticia.dia_semana }}</div>
+                        <div class="col-8 col-sm-8 col-md-8 col-lg-8 col-xl-8">{{ noticia.noticia }}</div>
+                    </div>
+                {% endfor %}
+            {% endfor %}
+        {% endif %}
+        <div style="margin-top: 2%"></div>
+    </div>
+</section>

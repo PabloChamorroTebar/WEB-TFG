@@ -1,0 +1,544 @@
+/*
+.nav div {
+    height: 4px;
+    background-color: white;
+    margin: 5px 0;
+    border-radius: 25px;
+    transition: 0.3s;
+}
+.nav {
+    width: 30px;
+    display: block;
+    margin: 1em 0 0 1em;
+
+}
+.one {
+    width: 30px;
+}
+.two {
+    width: 20px;
+}
+.three {
+    width: 25px;
+}
+
+.nav:hover div {
+    width: 30px;
+}
+
+header{
+    padding-top: 0;
+}
+
+#body_index {
+    margin: 0;
+    width: 100%;
+    background: white;
+    background-size: cover;
+}
+
+.wrapper .sidebar{
+  width: 200px;
+  height: 100%;
+  background: #4b4276;
+  padding: 30px 0px;
+  position: fixed;
+}
+
+.wrapper .sidebar h2{
+  color: #fff;
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.wrapper .sidebar ul li{
+  padding: 15px;
+  border-bottom: 1px solid #bdb8d7;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+  border-top: 1px solid rgba(255,255,255,0.05);
+}
+
+.wrapper .sidebar ul li a{
+  color: #bdb8d7;
+  display: block;
+}
+
+.wrapper .sidebar ul li a .fas{
+  width: 25px;
+}
+
+.wrapper .sidebar ul li:hover{
+  background-color: #594f8d;
+}
+
+.wrapper .sidebar ul li:hover a{
+  color: #fff;
+}
+
+.wrapper .sidebar .social_media{
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+}
+
+.wrapper .sidebar .social_media a{
+  display: block;
+  width: 40px;
+  background: #594f8d;
+  height: 40px;
+  line-height: 45px;
+  text-align: center;
+  margin: 0 5px;
+  color: #bdb8d7;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.wrapper .main_content{
+  width: 100%;
+  margin-left: 200px;
+}
+
+.wrapper .main_content .header{
+  padding: 20px;
+  background: #fff;
+  color: #717171;
+  border-bottom: 1px solid #e0e4e8;
+}
+
+.wrapper .main_content .info{
+  margin: 20px;
+  color: #717171;
+  line-height: 25px;
+}
+
+.wrapper .main_content .info div{
+  margin-bottom: 20px;
+}
+ */
+
+/*Login Css*/
+#body_login{
+    background: url("../images/fondo_web.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+#login_rectangle{
+    background: rgba(0, 0, 0, 0.4);
+    position: absolute;
+    margin: auto;
+    width: 30%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border-color: blue;
+    align-content: center;
+    text-align: center;
+    border-radius: 2em;
+}
+
+.text_color{
+    padding: 2%;
+    color: white;
+}
+
+.input_login{
+    width: 50%;
+    height: 30%;
+    font-size: 90%;
+
+
+}
+
+.button_login{
+    margin: 4%;
+    border-radius: 0.2em;
+    border: .2em solid cornflowerblue;
+    width: 30%;
+    font-size: 100%;
+    color: white;
+    background: dodgerblue;
+}
+
+/* Index css */
+html, body {
+  height: 100%;
+}
+* {
+  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+   font-family: 'Roboto Condensed', sans-serif;
+  line-height: 1.7;
+  perspective-origin: 0% 50%;
+  perspective: 800px;
+  background: #21212d;
+
+}
+nav, main {
+  transition: transform 150ms ease-out;
+}
+nav {
+  z-index: 100;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 16em;
+  background-color: #353441;
+  transform: translateX(-16em);
+}
+nav.menu-active {
+  transform: translateX(0);
+}
+nav.menu-hover {
+  transform: translateX(-15em);
+}
+nav h1 {
+  z-index: 100;
+  display: block;
+  position: absolute;
+  top: 0;
+  right: -65px;
+  height: 60px;
+  width: 65px;
+  line-height: 60px;
+  font-size: 0.8em;
+  font-weight: 300;
+  letter-spacing: 1px;
+  color: #fff;
+  text-transform: uppercase;
+  text-align: center;
+  /*background-color: #353441;*/
+  cursor: pointer;
+
+}
+nav h1:hover {
+  color: #353441;
+  background: #fff;
+}
+nav ul {
+  margin: 0;
+  padding: 0;
+}
+
+nav li {
+  display: inline-block;
+  padding: 0 1em;
+  width: 100%;
+  height: 60px;
+  color: #2b75a2;
+  line-height: 60px;
+  background-color: WHITE;
+    transition: all 0.5s ease-in;
+    cursor: pointer;
+    font-size: medium;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+nav li:nth-of-type(2n) {
+  background-color: WHITE;
+}
+nav li:hover {
+  background: #2b75a2;
+    color: white;
+
+}
+main {
+  z-index: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  /*background-image: url(ji.jpeg);*/
+  transform-origin: 0% 50%;
+    background-size: cover;
+}
+main:after {
+  content: '';
+  display: block;
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: linear-gradient(to right, transparent, rgba(33, 33, 45, .5));
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 150ms ease-out, visibility 0s 150ms;
+}
+main.menu-active {
+  border-radius: 0.001px;
+  transform: translateX(16em) rotateY(15deg);
+}
+main.menu-active:after {
+  visibility: visible;
+  opacity: 1;
+  transition: opacity 150ms ease-out, visibility 0s;
+}
+main.menu-hover {
+  border-radius: 0.001px;
+  transform: translateX(1em) rotateY(1deg);
+}
+main section {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+  padding: 1em 4em;
+  max-width: 1500px;
+  overflow: hidden;
+  background-color: rgba(255, 255, 255, 1);
+}
+section h1 {
+  font-weight: 800;
+  text-transform: uppercase;
+  font-size: 2em;
+}
+section p {
+  display: inline-block;
+  margin: 16px 0;
+    position: absolute;
+}
+
+.nav_button {
+    padding: 10px;
+}
+
+.one {
+    top: 10px;
+  width: 40px;
+    height: 10px;
+border-bottom: 6px solid #2b75a2;
+}
+
+.two {
+        height: 10px;
+border-bottom: 6px solid #2b75a2;
+  width: 40px;
+}
+
+.three {
+        height: 10px;
+border-bottom: 6px solid #2b75a2;
+  width: 40px;
+}
+
+.dropdown {
+    display: block;
+}
+
+.dropdown_image {
+    height: 20px;
+    width: 20px;
+    margin-top: 5px;
+    margin-left: 80px;
+}
+
+.practica_name {
+    display: none;
+}
+
+/*Template school calendar*/
+.school_calendar {
+    width: 95%;
+    height: 95%;
+}
+
+.div_school_calendar {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+/*Template Asignatura*/
+.div_asignatura {
+    position: fixed;
+    width: 100%;
+    overflow-y: scroll;
+    background: white;
+}
+
+.asignatura_name {
+    text-align: center;
+    margin: 2.5%;
+    color: #2b75a2;
+}
+
+.guia_docente {
+    cursor: pointer;
+    margin-left: 5%;
+}
+
+.image_pdf {
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+}
+
+.text_guia_docente {
+    display: inline-block;
+    color: blue;
+}
+
+.nombre_practicas {
+    cursor: pointer;
+    margin-left: 5%;
+    padding-top: 10px;
+}
+
+.add_asignatura {
+    cursor: pointer;
+    margin-left: 5%;
+    padding-top: 10px;
+    margin-bottom: 2%;
+    text-transform: uppercase;
+}
+
+/*Template create_practica*/
+
+div#container {
+    position: fixed;
+    left: 50% ;
+    top: 15%;
+    transform: translate(-50%, 0%);
+    display: inline-block;
+}
+
+div#barra_titulo {
+    position:absolute;
+    background-color: black;
+    color: white;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: x-large;
+    text-align: center;
+    padding-bottom: 1%;
+}
+
+input.fecha{
+    background-position: right 100%;
+}
+
+form button {
+    position:relative;
+    alignment: center;
+    margin: 5%;
+}
+
+/*Template block_practica*/
+.div_practica {
+    position: fixed;
+    width: 100%;
+    overflow-y: scroll;
+    background: white;
+}
+
+.practica_nombre {
+    text-align: center;
+    color: #2b75a2;
+    margin: 2.5%
+}
+
+.enunciado {
+    cursor: pointer;
+    margin-left: 5%;
+}
+
+.image_pdf {
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+}
+
+.text_enunciado {
+    display: inline-block;
+    color: blue;
+}
+
+.enunciado {
+    cursor: pointer;
+    margin-left: 5%;
+    margin-bottom: 2%;
+}
+
+.pdf_grupos {
+    cursor: pointer;
+    margin-left: 5%;
+    margin-bottom: 2%;
+}
+
+.text_pdfgroups {
+    display: inline-block;
+    color: blue;
+}
+
+.grupos_text {
+    cursor: pointer;
+    margin-left: 5%;
+    margin-bottom: 2%;
+}
+
+.image_txt {
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+}
+
+.text_groups {
+    display: inline-block;
+    color: blue;
+}
+
+/* Template block home*/
+.div_home {
+    background: white;
+    padding-top: 3%;
+}
+
+.div_mes {
+    text-align: center;
+    height: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #2b75a2;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-bottom: 2%;
+    margin-top: 4%;
+    color: white;
+}
+
+.div_aviso {
+    text-align: left;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-bottom: 0.5%;
+}
+
+.div_row {
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.logo_upm {
+    left: 50%;
+    transform: translateX(-52%);
+    margin: 2.5%;
+    text-align: center
+}

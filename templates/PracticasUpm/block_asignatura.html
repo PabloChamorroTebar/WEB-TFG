@@ -1,0 +1,19 @@
+{% load static %}
+<section style="overflow: auto">
+    <div class="div_asignatura col-11">
+        {% if asignatura %}
+            <h1 class="asignatura_name">{{ asignatura }}</h1>
+        {% endif %}
+        <div class="enunciado">
+            <img class="image_pdf" src="{% static 'images/pdf.png' %}">
+            <h4 class="text_guia_docente" onclick="show_guia_docente('{% url 'guia_docente' asignatura=asignatura %}')">Guia docente</h4>
+        </div>
+        <div class="add_asignatura" onclick="go_create_practica('{% url 'go_create' asignatura=asignatura %}', '{{ csrf_token }}')"><img src="{% static 'images/signo-mas-en-circulo.png' %}" > Crear nueva práctica</div>
+        {% if practicas_asignatura %}
+            {% for key, value in practicas_asignatura.items %}
+                <h2 class="nombre_practicas" onclick="go_practica('{% url 'go_practica' asignatura=asignatura practica=key %}', '{{ csrf_token }}')">{{ key }}</h2>
+            {% endfor %}
+        {% endif %}
+        <div style="margin-top: 2%"></div>
+    </div>
+</section>

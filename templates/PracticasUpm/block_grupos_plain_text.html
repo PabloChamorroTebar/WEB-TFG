@@ -1,0 +1,17 @@
+{% extends 'PracticasUpm/base.html' %}
+{% block content %}
+<section style="overflow: auto">
+    <div class="div_asignatura col-12">
+        <ul style="list-style-type:none;">
+          <li>Nombre Grupo;nombre;email;matricula;</li>
+          {% if alumnos_grupo_text %}
+          {% for key, value in alumnos_grupo_text.items %}
+              {% for  alumno in value %}
+                  <li>{{alumno.nombre_grupo}};{{alumno.nombre}};{{alumno.email}};{{alumno.matricula}}</li>
+              {% endfor %}
+          {% endfor %}
+          {% endif %}
+        </ul>
+    </div>
+</section>
+{% endblock %}

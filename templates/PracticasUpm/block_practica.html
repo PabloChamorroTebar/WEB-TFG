@@ -1,0 +1,32 @@
+{% load static %}
+<section style="overflow: auto">
+    <div class="div_practica col-11">
+        {% if asignatura %}
+            <h1 class="practica_nombre">{{ practica_nombre }}</h1>
+        {% endif %}
+        <div class="enunciado">
+            <img class="image_pdf" src="{% static 'images/pdf.png' %}">
+            <h4 class="text_enunciado" onclick="show_enunciado('{% url 'show_enunciado' asignatura=asignatura practica=practica_nombre%}')">Enunciado</h4>
+        </div>
+        {% if show_grupos %}
+            {% for nombre_grupo, personas_grupo in grupos.items %}
+        <div class="col-4" style="position: relative; left: 50%; transform: translateX(-50%); min-height: 300px; border-radius: 25px; border: 2px solid #1177d1; margin-top: 2%">
+            <h3 class="nombre_grupo" style="text-align: center; margin-bottom: 1%">Grupo {{ nombre_grupo }}</h3>
+                {% for persona in personas_grupo %}
+                    <h5 class="persona_grupo" style="margin-bottom: 0.5%; margin-left: 1%">{{ persona }}</h5>
+                {% endfor %}
+        </div>
+            {% endfor %}
+        {% else %}
+            <div class="pdf_grupos">
+                <img class="image_pdf" src="{% static 'images/pdf.png' %}">
+                <h4 class="text_pdfgroups" onclick="show_pdf_grupos('{% url 'pdf_grupos' asignatura=asignatura practica=practica_nombre%}')">Grupos formados</h4>
+            </div>
+            <div class="grupos_text">
+                <img class="image_txt" src="{% static 'images/icons8-microsoft-excel-2019-96.png' %}">
+                <h4 class="text_groups" onclick="alumnos_grupos_text('{% url 'go_to_grupos_texto_plano' asignatura=asignatura practica=practica_nombre%}', '{{ csrf_token }}')">Grupos formados (texto plano)</h4>
+            </div>
+        {% endif %}
+        <div style="margin-top: 2%"></div>
+    </div>
+</section>
